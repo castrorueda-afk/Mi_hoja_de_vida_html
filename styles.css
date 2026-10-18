@@ -1,4 +1,4 @@
-/* Variables de color y fuentes */
+
 :root {
     --bg-primary: #0f172a;
     --bg-card: #1e293b;
@@ -27,7 +27,7 @@ body {
     line-height: 1.6;
 }
 
-/* Header & Navegación */
+
 header {
     background-color: rgba(30, 41, 59, 0.9);
     backdrop-filter: blur(8px);
@@ -47,7 +47,7 @@ header {
 }
 
 .logo {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--accent);
 }
@@ -69,7 +69,7 @@ header {
     color: var(--accent);
 }
 
-/* Contenedor principal */
+
 .container {
     max-width: 1100px;
     width: 100%;
@@ -85,7 +85,7 @@ header {
     text-align: center;
 }
 
-/* Componente Card */
+
 .card {
     background-color: var(--bg-card);
     padding: 1.8rem;
@@ -106,7 +106,7 @@ header {
     font-size: 1.3rem;
 }
 
-/* Grid Layouts */
+
 .grid-layout {
     display: grid;
     grid-template-columns: 1fr;
@@ -119,14 +119,14 @@ header {
     gap: 1.5rem;
 }
 
-/* Perfil */
+
 .profile-card {
     text-align: center;
 }
 
 .avatar {
-    width: 130px;
-    height: 130px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     margin-bottom: 1rem;
     border: 3px solid var(--accent);
@@ -139,7 +139,7 @@ header {
     margin-bottom: 1rem;
 }
 
-/* Badges / Etiquetas de habilidades */
+
 .skills-tags {
     display: flex;
     flex-wrap: wrap;
@@ -156,7 +156,7 @@ header {
     border: 1px solid rgba(56, 189, 248, 0.3);
 }
 
-/* Botones */
+
 .btn {
     display: inline-block;
     padding: 0.7rem 1.4rem;
@@ -176,7 +176,7 @@ header {
     color: #ffffff;
 }
 
-/* Formulario de Contacto */
+
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -210,7 +210,7 @@ header {
     border-color: var(--accent);
 }
 
-/* Footer */
+
 footer {
     background-color: var(--bg-card);
     text-align: center;
@@ -220,7 +220,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Media Queries para Pantallas Grandes (Tablets y Laptops) */
+
 @media (min-width: 768px) {
     .grid-layout {
         grid-template-columns: 1fr 2fr;
