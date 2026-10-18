@@ -1,23 +1,40 @@
-/* Reset básico */
+/* Variables de color y fuentes */
+:root {
+    --bg-primary: #0f172a;
+    --bg-card: #1e293b;
+    --bg-card-hover: #334155;
+    --accent: #38bdf8;
+    --accent-hover: #0284c7;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --border-color: #334155;
+    --radius: 12px;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
 body {
-    background-color: #0f172a;
-    color: #f8fafc;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    line-height: 1.6;
 }
 
-/* Navegación */
+/* Header & Navegación */
 header {
-    background-color: #1e293b;
-    padding: 1rem 2rem;
+    background-color: rgba(30, 41, 59, 0.9);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .navbar {
@@ -26,6 +43,13 @@ header {
     align-items: center;
     max-width: 1100px;
     margin: 0 auto;
+    padding: 1rem 1.5rem;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent);
 }
 
 .nav-links {
@@ -35,78 +59,177 @@ header {
 }
 
 .nav-links a {
-    color: #94a3b8;
+    color: var(--text-secondary);
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: #38bdf8;
+    color: var(--accent);
 }
 
-/* Layout con CSS Grid */
+/* Contenedor principal */
 .container {
     max-width: 1100px;
+    width: 100%;
     margin: 2rem auto;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
     flex: 1;
 }
 
+.page-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent);
+    text-align: center;
+}
+
+/* Componente Card */
+.card {
+    background-color: var(--bg-card);
+    padding: 1.8rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.card h2 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+/* Grid Layouts */
 .grid-layout {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
 }
 
-/* Estilos de Tarjetas */
-.card {
-    background-color: #1e293b;
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid #334155;
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
 }
 
+/* Perfil */
 .profile-card {
     text-align: center;
 }
 
 .avatar {
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     margin-bottom: 1rem;
-    border: 3px solid #38bdf8;
+    border: 3px solid var(--accent);
+    object-fit: cover;
 }
 
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Badges / Etiquetas de habilidades */
 .skills-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.6rem;
+}
+
+.tag {
+    background-color: rgba(56, 189, 248, 0.15);
+    color: var(--accent);
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.4rem;
+    background-color: var(--accent);
+    color: #0f172a;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
     margin-top: 1rem;
 }
 
-.skills-tags span {
-    background-color: #0284c7;
-    color: white;
-    padding: 0.4rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
+.btn:hover {
+    background-color: var(--accent-hover);
+    color: #ffffff;
+}
+
+/* Formulario de Contacto */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: #0f172a;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
 }
 
 /* Footer */
 footer {
-    background-color: #1e293b;
+    background-color: var(--bg-card);
     text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-    color: #64748b;
+    padding: 1.2rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
-/* Media Queries (Responsive) */
+/* Media Queries para Pantallas Grandes (Tablets y Laptops) */
 @media (min-width: 768px) {
     .grid-layout {
         grid-template-columns: 1fr 2fr;
     }
-    
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .profile-card {
         grid-row: span 2;
     }
